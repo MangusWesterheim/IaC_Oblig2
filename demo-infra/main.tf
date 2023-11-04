@@ -16,7 +16,7 @@ resource "random_password" "password" {
   override_special = "!%&*()-_=+[]{}<>:?"
 }
 
-output "vm_password" {
+output "vm_passwords" {
   value     = azurerm_key_vault_secret.vm_password.value
   sensitive = true
 }
