@@ -9,7 +9,7 @@ terraform {
     resource_group_name  = "mwj-rg-backend"
     storage_account_name = "mwjbackendsacjtcwe"
     container_name       = "tfstate"
-    key                  = "testingOblig2.terraform.tfstate"
+    key                  = "Oblig2.terraform.tfstate"
   }
 }
 
