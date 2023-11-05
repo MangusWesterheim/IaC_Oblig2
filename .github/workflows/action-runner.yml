@@ -4,17 +4,6 @@ on:
   push:
     paths:
       - 'demo-infra/**'
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: 'apply or destroy'
-        required: true
-        default: 'apply'
-        type: choice
-        options:
-          - 'dev'
-          - 'stage'
-          - 'apply'
 
 env:
   ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
