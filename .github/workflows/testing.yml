@@ -53,4 +53,9 @@ jobs:
         run: tflint # Replace with your desired tflint commands
         working-directory: ${{ env.WORKING_DIR }}
 
+      - name: Terraform format
+        id: fmt
+        run: terraform fmt -check
+        working-directory: ${{ env.WORKING_DIR }}
+
 
