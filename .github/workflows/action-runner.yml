@@ -29,9 +29,13 @@ jobs:
       - name: Terraform workspace select or create dev
         run: terraform workspace select dev || terraform workspace new dev
         working-directory: ${{ env.WORKING_DIR }}
-       
+
+      - name: Terraform plan
+        run: terraform plan -out=plan.tfplan
+        working-directory: ${{ env.WORKING_DIR }}
+      
       - name: Terraform apply dev
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve plan.tfplan
         working-directory: ${{ env.WORKING_DIR }}
 
   stage_prod:
@@ -48,9 +52,13 @@ jobs:
       - name: Terraform workspace select or create stage
         run: terraform workspace select stage || terraform workspace new stage
         working-directory: ${{ env.WORKING_DIR }}
-
-      - name: Terraform apply stage
-        run: terraform apply -auto-approve
+      
+      - name: Terraform plan
+        run: terraform plan -out=plan.tfplan
+        working-directory: ${{ env.WORKING_DIR }}
+      
+      - name: Terraform apply stage_prod
+        run: terraform apply -auto-approve plan.tfplan
         working-directory: ${{ env.WORKING_DIR }}
 
   prod:
@@ -70,6 +78,10 @@ jobs:
         run: terraform workspace select prod || terraform workspace new prod
         working-directory: ${{ env.WORKING_DIR }}
       
+      - name: Terraform plan
+        run: terraform plan -out=plan.tfplan
+        working-directory: ${{ env.WORKING_DIR }}
+      
       - name: Terraform apply prod
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve plan.tfplan
         working-directory: ${{ env.WORKING_DIR }}
