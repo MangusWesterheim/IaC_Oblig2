@@ -1,0 +1,32 @@
+###### General variables ######
+base_name = ""
+rg_name   = ""
+location  = ""
+
+##########################################
+###### Variable for the keyvault.tf ######
+##########################################
+kv_name           = ""
+sa_accesskey_name = ""
+
+################################################
+###### Variable for the storageaccount.tf ######
+################################################7
+
+sa_name = ""
+sc_name = ""
+
+#################################################
+###### Variables for the virtualnetwork.tf ######
+#################################################
+vnet_name   = ""
+nsg_name    = ""
+subnet_name = ""
+
+#################################################
+###### Variables for the virtualmachine.tf ######
+#################################################
+vm_nic_name = ""
+vm_name     = ""
+pip_name    = ""
+vm_username = ""
