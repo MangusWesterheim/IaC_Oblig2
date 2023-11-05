@@ -3,7 +3,7 @@ locals {
 #Resource Group
   rg_name = terraform.workspace == "default" ? "${var.base_name}-${var.rg_name}" : "${var.base_name}-${var.rg_name}-${local.workspaces_suffix}"
 #Storage account
-  sa_name = terraform.workspace == "default" ? "${var.base_name}${var.sa_name}${random_string.random_string.result}" : "${var.base_name}${var.sa_name}${random_string.random_string.result}-${local.workspaces_suffix}"
+  sa_name = terraform.workspace == "default" ? "${var.base_name}${var.sa_name}${random_string.random_string.result}" : "${var.base_name}${var.sa_name}${random_string.random_string.result}${local.workspaces_suffix}"
   sc_name = terraform.workspace == "default" ? "${var.base_name}${var.sa_name}" : "${var.base_name}${var.sc_name}-${local.workspaces_suffix}"
 #Key Vault
   kv_name = terraform.workspace == "default" ? "${var.base_name}${var.kv_name}${random_string.random_string.result}" : "${var.base_name}${var.kv_name}${random_string.random_string.result}-${local.workspaces_suffix}"
