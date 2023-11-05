@@ -1,5 +1,5 @@
 resource "azurerm_storage_account" "sa" {
-  name                     = "${var.base_name}${var.sa_name}${random_string.random_string.result}"
+  name                     = local.sa_name
   resource_group_name      = azurerm_resource_group.rg-infra.name
   location                 = azurerm_resource_group.rg-infra.location
   account_tier             = "Standard"
@@ -7,7 +7,7 @@ resource "azurerm_storage_account" "sa" {
 }
 
 resource "azurerm_storage_container" "sc" {
-  name                  = "${var.base_name}${var.sc_name}"
+  name                  = local.sc_name
   storage_account_name  = azurerm_storage_account.sa.name
   container_access_type = "private"
 }
