@@ -16,7 +16,7 @@ locals {
   #virtualmachine
   vm_nic_name = terraform.workspace == "default" ? "${var.base_name}-${var.vm_nic_name}" : "${var.base_name}-${var.vm_nic_name}-${local.workspaces_suffix}"
   vm_name     = terraform.workspace == "default" ? "${var.base_name}-${var.vm_name}" : "${var.base_name}-${var.vm_name}-${local.workspaces_suffix}"
-    pip_name    = terraform.workspace == "default" ? "${var.base_name}-${var.pip_name}" : "${var.base_name}-${var.pip_name}-${local.workspaces_suffix}"
+  pip_name    = terraform.workspace == "default" ? "${var.base_name}-${var.pip_name}" : "${var.base_name}-${var.pip_name}-${local.workspaces_suffix}"
   vm_username = terraform.workspace == "default" ? "${var.base_name}-${var.vm_username}" : "${var.vm_username}-${local.workspaces_suffix}"
 
 }
