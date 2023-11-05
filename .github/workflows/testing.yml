@@ -50,7 +50,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
     
       - name: Run TFLint
-        run: tflint --version # Replace with your desired tflint commands
+        run: tflint # Replace with your desired tflint commands
         working-directory: ${{ env.WORKING_DIR }}
 
 
