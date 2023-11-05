@@ -48,5 +48,9 @@ jobs:
         uses: terraform-linters/setup-tflint@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+    
+      - name: Run TFLint
+        run: tflint --version # Replace with your desired tflint commands
+        working-directory: ${{ env.WORKING_DIR }}
 
 
