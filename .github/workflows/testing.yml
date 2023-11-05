@@ -44,13 +44,9 @@ jobs:
         run: terraform validate
         working-directory: ${{ env.WORKING_DIR }}
      
-      - name: 'tlfint'
-        uses: terraform-linters/setup-tflint@v4.0.0
+      - name: 'tflint'
+        uses: terraform-linters/setup-tflint@v4
         with:
-            tflint_version: default
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-          # Installs a wrapper script to wrap subsequent calls to `tflint` and expose `stdout`, `stderr`, and `exitcode` outputs
-            tflint_wrapper: false # optional, default is false
-
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
 
